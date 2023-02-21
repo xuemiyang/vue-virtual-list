@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { VirtualList } from "vue-virtual-list";
-import "vue-virtual-list/dist/style.css";
+import { VirtualList } from "@xuemiyang/vue-virtual-list";
+import "@xuemiyang/vue-virtual-list/dist/style.css";
 
 const allList = ref<any[]>([]);
 
