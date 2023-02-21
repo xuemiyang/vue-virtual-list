@@ -1,15 +1,3 @@
-# vue-virtual-list
-
-
-## Install
-
-```sh
-npm install vue-virtual-list
-```
-
-## Usage
-
-```vue
 <script setup lang="ts">
 import { ref } from "vue";
 import { VirtualList } from "vue-virtual-list";
@@ -50,4 +38,3 @@ for (let i = 0; i < 10000000; i++) {
   background-color: bisque;
 }
 </style>
-```

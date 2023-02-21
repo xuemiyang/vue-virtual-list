@@ -1,0 +1,41 @@
+{
+  "name": "vue-virtual-list",
+  "version": "1.0.0",
+  "description": "vue virtual list",
+  "main": "dist/vue-virtual-list.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuemiyang/vue-virtual-list.git"
+  },
+  "keywords": [
+    "vue",
+    "virtual",
+    "list"
+  ],
+  "author": "xuemiyang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuemiyang/vue-virtual-list/issues"
+  },
+  "homepage": "https://github.com/xuemiyang/vue-virtual-list#readme",
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.0-beta.3",
+    "vue-tsc": "^1.0.24"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.45"
+  }
+}
