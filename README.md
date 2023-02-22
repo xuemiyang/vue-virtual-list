@@ -1,5 +1,6 @@
 # @xuemiyang/vue-virtual-list
 
+Support VUE3 virtual list of tens of millions of data
 
 ## Install
 
@@ -51,3 +52,15 @@ for (let i = 0; i < 10000000; i++) {
 }
 </style>
 ```
+
+## Component properties
+
+Name         |  Type                        |  Description 
+-------------|------------------------------|------------
+type         |  'horizontal' \| 'vertical'  |  scroll direction
+itemWidth    |  number                      |  item Width
+itemHeight   |  number                      |  item Height 
+rowSpace     |  number                      |  row Space
+columnSpace  |  number                      |  column Space
+repeatNumber |  number                      |  item Number of duplicates. For example, 4 rows and 3 columns, the direction is horizontal, and the number of repetitions is 4
+values       |  any[]                       |  an array of values
