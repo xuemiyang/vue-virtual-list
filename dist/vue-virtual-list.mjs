@@ -1,4 +1,4 @@
-import { defineComponent as R, useCssVars as B, unref as p, computed as u, ref as S, openBlock as M, createElementBlock as y, normalizeClass as _, createElementVNode as E, normalizeStyle as D, Fragment as F, renderList as O, renderSlot as j } from "vue";
+import { defineComponent as R, useCssVars as B, unref as f, computed as n, ref as S, openBlock as M, createElementBlock as y, normalizeClass as _, createElementVNode as E, normalizeStyle as D, Fragment as F, renderList as O, renderSlot as j } from "vue";
 const q = /* @__PURE__ */ R({
   __name: "VirtualList",
   props: {
@@ -10,68 +10,70 @@ const q = /* @__PURE__ */ R({
     repeatNumber: null,
     values: null
   },
-  setup(w) {
-    const e = w;
+  setup(p) {
+    const e = p;
     B((o) => ({
-      ba460dda: p(P),
-      dbcd1dce: p(z),
-      "107dc1d0": p(N),
-      "1e69c225": p(W),
-      "3dc79d75": p(L),
-      "1c3a3b97": p(H)
+      "237b69a6": f(P),
+      "73d71882": f(z),
+      "1cff2b32": f(N),
+      be258d6a: f(W),
+      "0bb30b0f": f(L),
+      49457786: f(H)
     }));
-    const r = u(() => e.itemWidth + e.columnSpace), i = u(() => e.itemHeight + e.rowSpace), f = u(() => Math.floor(16777200 / r.value) * r.value), C = u(() => Math.floor(16777200 / i.value) * i.value), d = u(() => Math.floor(167772 / i.value)), g = u(() => Math.floor(167772 / r.value)), x = S(), $ = u(() => {
+    const s = n(() => e.itemWidth + e.columnSpace), i = n(() => e.itemHeight + e.rowSpace), w = n(() => Math.floor(16777200 / s.value) * s.value), C = n(() => Math.floor(16777200 / i.value) * i.value), d = n(() => Math.floor(167772 / i.value)), g = n(() => Math.floor(167772 / s.value)), x = S(), b = n(() => {
       var o;
       return ((o = x.value) == null ? void 0 : o.offsetWidth) ?? 0;
-    }), b = u(() => {
+    }), $ = n(() => {
       var o;
       return ((o = x.value) == null ? void 0 : o.offsetHeight) ?? 0;
-    }), N = u(() => `${e.itemWidth}px`), W = u(() => `${e.itemHeight}px`), L = u(() => `${e.columnSpace}px`), H = u(() => `${e.rowSpace}px`), P = u(() => `${-e.columnSpace}px`), z = u(() => `${-e.rowSpace}px`), t = u(() => {
+    }), N = n(() => `${e.itemWidth}px`), W = n(() => `${e.itemHeight}px`), L = n(() => `${e.columnSpace}px`), H = n(() => `${e.rowSpace}px`), P = n(() => `${-e.columnSpace}px`), z = n(() => `${-e.rowSpace}px`), u = n(() => {
       const o = { rowCount: 1, columnCount: 1 };
       return e.type == "horizontal" ? e.repeatNumber > 0 ? (o.rowCount = Math.ceil(e.values.length / e.repeatNumber), o.columnCount = Math.min(e.values.length, e.repeatNumber)) : e.values.length > 0 && (o.columnCount = e.values.length) : e.type == "vertical" && (e.repeatNumber > 0 ? (o.columnCount = Math.ceil(e.values.length / e.repeatNumber), o.rowCount = Math.min(e.values.length, e.repeatNumber)) : e.values.length > 0 && (o.rowCount = e.values.length)), o;
-    }), h = u(() => ({
-      rowCount: Math.min(Math.floor((b.value + e.rowSpace) / i.value) + 1, t.value.rowCount),
-      columnCount: Math.min(Math.floor(($.value + e.columnSpace) / r.value) + 1, t.value.columnCount)
-    })), n = S({ rowCount: 0, columnCount: 0 }), a = S({ row: 0, column: 0 }), c = u(() => {
+    }), h = n(() => ({
+      rowCount: Math.min(Math.floor(($.value + e.rowSpace) / i.value) + 1, u.value.rowCount),
+      columnCount: Math.min(Math.floor((b.value + e.columnSpace) / s.value) + 1, u.value.columnCount)
+    })), a = S({ rowCount: 0, columnCount: 0 }), r = S({ row: 0, column: 0 }), c = n(() => {
       const o = { row: 0, column: 0 };
-      return o.row = Math.min(a.value.row + h.value.rowCount * 3, t.value.rowCount - 1), o.column = Math.min(a.value.column + h.value.columnCount * 3, t.value.columnCount - 1), e.type == "horizontal" ? (o.row * t.value.columnCount + o.column >= e.values.length && (o.row = t.value.rowCount - 1, o.column = t.value.columnCount - 1), e.repeatNumber <= 0 && (o.row = 0)) : e.type == "vertical" && (o.column * t.value.rowCount + o.row >= e.values.length && (o.column = t.value.columnCount - 1, o.row = t.value.rowCount - 1), e.repeatNumber <= 0 && (o.column = 0)), o;
-    }), k = u(() => {
+      return o.row = Math.min(r.value.row + h.value.rowCount * 3, u.value.rowCount - 1), o.column = Math.min(r.value.column + h.value.columnCount * 3, u.value.columnCount - 1), e.type == "horizontal" ? (o.row * u.value.columnCount + o.column >= e.values.length && (o.row = u.value.rowCount - 1, o.column = u.value.columnCount - 1), e.repeatNumber <= 0 && (o.row = 0)) : e.type == "vertical" && (o.column * u.value.rowCount + o.row >= e.values.length && (o.column = u.value.columnCount - 1, o.row = u.value.rowCount - 1), e.repeatNumber <= 0 && (o.column = 0)), o;
+    }), k = n(() => {
       const o = [];
       if (e.type == "horizontal")
-        for (let l = a.value.row; l <= c.value.row; l++) {
-          const m = l * t.value.columnCount + a.value.column, s = l * t.value.columnCount + c.value.column;
-          o.push(...e.values.slice(m, s + 1));
+        for (let l = r.value.row; l <= c.value.row; l++) {
+          const v = l * u.value.columnCount + r.value.column, m = l * u.value.columnCount + c.value.column;
+          for (let t = v; t <= m; t++)
+            o.push({ index: t, value: e.values[t] });
         }
       else if (e.type == "vertical")
-        for (let l = a.value.column; l <= c.value.column; l++) {
-          const m = l * t.value.rowCount + a.value.row, s = l * t.value.rowCount + c.value.row;
-          o.push(...e.values.slice(m, s + 1));
+        for (let l = r.value.column; l <= c.value.column; l++) {
+          const v = l * u.value.rowCount + r.value.row, m = l * u.value.rowCount + c.value.row;
+          for (let t = v; t <= m; t++)
+            o.push({ index: t, value: e.values[t] });
         }
       return o;
-    }), T = u(() => {
-      let o = r.value * (a.value.column - n.value.columnCount), l = i.value * (a.value.row - n.value.rowCount), m = r.value * (t.value.columnCount - 1 - (c.value.column - n.value.columnCount)), s = i.value * (t.value.rowCount - 1 - (c.value.row - n.value.rowCount));
-      o + m > f.value && (o > f.value && (o = f.value), m = f.value - o), l + s > C.value && (l > C.value && (l = C.value), s = C.value - l);
-      const v = r.value * (c.value.column - a.value.column + 1), I = i.value * (c.value.row - a.value.row + 1);
+    }), T = n(() => {
+      let o = s.value * (r.value.column - a.value.columnCount), l = i.value * (r.value.row - a.value.rowCount), v = s.value * (u.value.columnCount - 1 - (c.value.column - a.value.columnCount)), m = i.value * (u.value.rowCount - 1 - (c.value.row - a.value.rowCount));
+      o + v > w.value && (o > w.value && (o = w.value), v = w.value - o), l + m > C.value && (l > C.value && (l = C.value), m = C.value - l);
+      const t = s.value * (c.value.column - r.value.column + 1), I = i.value * (c.value.row - r.value.row + 1);
       return {
-        padding: `${l}px ${m}px ${s}px ${o}px`,
-        width: `${v}px`,
+        padding: `${l}px ${v}px ${m}px ${o}px`,
+        width: `${t}px`,
         height: `${I}px`,
         flexDirection: e.type == "horizontal" ? "row" : "column"
       };
     }), V = (o) => {
-      const l = o.target, m = Math.floor((l.scrollTop + e.rowSpace) / i.value) + n.value.rowCount, s = Math.floor((l.scrollLeft + e.columnSpace) / r.value) + n.value.columnCount;
-      if (a.value.row = m < h.value.rowCount ? 0 : m - h.value.rowCount, a.value.column = s < h.value.columnCount ? 0 : s - h.value.columnCount, e.repeatNumber <= 0 && (e.type == "horizontal" ? a.value.row = 0 : e.type == "vertical" && (a.value.column = 0)), l.scrollTop + l.offsetHeight >= l.scrollHeight && c.value.row < t.value.rowCount - 1) {
-        const v = t.value.rowCount - 1 - c.value.row > d.value ? d.value : t.value.rowCount - 1 - c.value.row;
-        n.value.rowCount += v, l.scrollTop -= i.value * v;
-      } else if (n.value.rowCount > 0 && a.value.row < n.value.rowCount) {
-        const v = n.value.rowCount > d.value ? d.value : n.value.rowCount;
-        n.value.rowCount -= v, l.scrollTop += i.value * v;
-      } else if (l.scrollLeft + l.offsetWidth >= l.scrollWidth && c.value.column < t.value.columnCount - 1) {
-        const v = t.value.columnCount - 1 - c.value.column > g.value ? g.value : t.value.columnCount - 1 - c.value.column;
-        n.value.columnCount += v, l.scrollLeft -= r.value * v;
-      } else if (n.value.columnCount > 0 && a.value.column < n.value.columnCount) {
-        const v = n.value.columnCount > g.value ? g.value : n.value.columnCount;
-        n.value.columnCount -= v, l.scrollLeft += r.value * v;
+      const l = o.target, v = Math.floor((l.scrollTop + e.rowSpace) / i.value) + a.value.rowCount, m = Math.floor((l.scrollLeft + e.columnSpace) / s.value) + a.value.columnCount;
+      if (r.value.row = v < h.value.rowCount ? 0 : v - h.value.rowCount, r.value.column = m < h.value.columnCount ? 0 : m - h.value.columnCount, e.repeatNumber <= 0 && (e.type == "horizontal" ? r.value.row = 0 : e.type == "vertical" && (r.value.column = 0)), l.scrollTop + l.offsetHeight >= l.scrollHeight && c.value.row < u.value.rowCount - 1) {
+        const t = u.value.rowCount - 1 - c.value.row > d.value ? d.value : u.value.rowCount - 1 - c.value.row;
+        a.value.rowCount += t, l.scrollTop -= i.value * t;
+      } else if (a.value.rowCount > 0 && r.value.row < a.value.rowCount) {
+        const t = a.value.rowCount > d.value ? d.value : a.value.rowCount;
+        a.value.rowCount -= t, l.scrollTop += i.value * t;
+      } else if (l.scrollLeft + l.offsetWidth >= l.scrollWidth && c.value.column < u.value.columnCount - 1) {
+        const t = u.value.columnCount - 1 - c.value.column > g.value ? g.value : u.value.columnCount - 1 - c.value.column;
+        a.value.columnCount += t, l.scrollLeft -= s.value * t;
+      } else if (a.value.columnCount > 0 && r.value.column < a.value.columnCount) {
+        const t = a.value.columnCount > g.value ? g.value : a.value.columnCount;
+        a.value.columnCount -= t, l.scrollLeft += s.value * t;
       }
     };
     return (o, l) => (M(), y("div", {
@@ -82,34 +84,34 @@ const q = /* @__PURE__ */ R({
     }, [
       E("div", {
         class: _(o.$style.content),
-        style: D(p(T))
+        style: D(f(T))
       }, [
-        (M(!0), y(F, null, O(p(k), (m, s) => (M(), y("div", {
-          key: s,
+        (M(!0), y(F, null, O(f(k), (v, m) => (M(), y("div", {
+          key: m,
           class: _(o.$style.item)
         }, [
           j(o.$slots, "default", {
-            item: m,
-            index: s
+            item: v.value,
+            index: v.index
           })
         ], 2))), 128))
       ], 6)
     ], 34));
   }
-}), A = "_wrapper_14snw_3", G = "_content_14snw_11", J = "_item_14snw_27", K = {
+}), A = "_wrapper_19wfm_2", G = "_content_19wfm_6", J = "_item_19wfm_14", K = {
   wrapper: A,
   content: G,
   item: J
-}, Q = (w, e) => {
-  const r = w.__vccOpts || w;
-  for (const [i, f] of e)
-    r[i] = f;
-  return r;
+}, Q = (p, e) => {
+  const s = p.__vccOpts || p;
+  for (const [i, w] of e)
+    s[i] = w;
+  return s;
 }, U = {
   $style: K
 }, X = /* @__PURE__ */ Q(q, [["__cssModules", U]]), Z = {
-  install(w) {
-    w.component("VirtualList", X);
+  install(p) {
+    p.component("VirtualList", X);
   }
 };
 export {

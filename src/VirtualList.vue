@@ -100,18 +100,22 @@ const endPosition = computed<Position>(() => {
 })
 
 const showList = computed(() => {
-    const result: any[] = []
+    const result: { index: number, value: any }[] = []
     if (props.type == 'horizontal') {
         for (let row = startPosition.value.row; row <= endPosition.value.row; row++) {
             const startIndex = row * contentRegion.value.columnCount + startPosition.value.column
             const endIndex = row * contentRegion.value.columnCount + endPosition.value.column
-            result.push(...props.values.slice(startIndex, endIndex + 1))
+            for (let i = startIndex; i <= endIndex; i++) {
+                result.push({ index: i, value: props.values[i]})
+            }
         }
     } else if (props.type == 'vertical') {
         for (let column = startPosition.value.column; column <= endPosition.value.column; column++) {
             const startIndex = column * contentRegion.value.rowCount + startPosition.value.row
             const endIndex = column * contentRegion.value.rowCount + endPosition.value.row
-            result.push(...props.values.slice(startIndex, endIndex + 1))
+            for (let i = startIndex; i <= endIndex; i++) {
+                result.push({ index: i, value: props.values[i]})
+            }
         }
     }
     return result
@@ -184,7 +188,7 @@ const handleScroll = (e: UIEvent) => {
     <div ref="wrapper" :class="$style.wrapper" @scroll.passive="handleScroll">
         <div :class="$style.content" :style="contentStyle">
             <div v-for="(item, index) in showList" :key="index" :class="$style.item">
-                <slot :item="item" :index="index"></slot>
+                <slot :item="item.value" :index="item.index"></slot>
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@ import "@xuemiyang/vue-virtual-list/dist/style.css";
 const allList = ref<any[]>([]);
 
 for (let i = 0; i < 10000000; i++) {
-  allList.value.push({ title: `title ${i}`, id: i });
+  allList.value.push({ title: `title ${i}` });
 }
 </script>
 
@@ -22,8 +22,11 @@ for (let i = 0; i < 10000000; i++) {
       :repeat-number="0"
       :values="allList"
     >
-      <template #default="{ item }">
-        <h2 class="item">{{ item.title }}</h2>
+      <template #default="{ item, index }">
+        <div class="item">
+          <h2 >{{ item.title }}</h2>
+          <h3>{{ index }}</h3>
+        </div>
       </template>
     </VirtualList>
   </div>

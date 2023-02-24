@@ -1,7 +1,7 @@
 {
   "name": "@xuemiyang/vue-virtual-list",
-  "version": "1.0.0",
-  "description": "vue virtual list",
+  "version": "1.0.3",
+  "description": "vue3 virtual list",
   "main": "dist/vue-virtual-list.mjs",
   "types": "dist/index.d.ts",
   "files": [
