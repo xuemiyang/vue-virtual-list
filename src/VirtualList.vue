@@ -105,7 +105,7 @@ const showList = computed(() => {
         for (let row = startPosition.value.row; row <= endPosition.value.row; row++) {
             const startIndex = row * contentRegion.value.columnCount + startPosition.value.column
             const endIndex = row * contentRegion.value.columnCount + endPosition.value.column
-            for (let i = startIndex; i <= endIndex; i++) {
+            for (let i = startIndex; i <= endIndex && i < props.values.length; i++) {
                 result.push({ index: i, value: props.values[i]})
             }
         }
@@ -113,7 +113,7 @@ const showList = computed(() => {
         for (let column = startPosition.value.column; column <= endPosition.value.column; column++) {
             const startIndex = column * contentRegion.value.rowCount + startPosition.value.row
             const endIndex = column * contentRegion.value.rowCount + endPosition.value.row
-            for (let i = startIndex; i <= endIndex; i++) {
+            for (let i = startIndex; i <= endIndex && i < props.values.length; i++) {
                 result.push({ index: i, value: props.values[i]})
             }
         }
