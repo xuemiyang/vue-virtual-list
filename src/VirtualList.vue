@@ -182,6 +182,41 @@ const handleScroll = (e: UIEvent) => {
         target.scrollLeft += itemWidthWithSpace.value * offset
     }
 }
+
+const scrollTo = (row: number, column: number) => {
+    if (!wrapper.value) {
+        return
+    }
+    if (row < 0) {
+        row = 0
+    } else if (row > contentRegion.value.rowCount - showRegion.value.rowCount) {
+        row = contentRegion.value.rowCount - showRegion.value.rowCount
+    }
+    if (column < 0) {
+        column = 0
+    } else if (column > contentRegion.value.columnCount - showRegion.value.columnCount) {
+        column = contentRegion.value.columnCount - showRegion.value.columnCount
+    }
+    if (column > CSSMaxWidth.value / itemWidthWithSpace.value - offseColumn.value) {
+        offsetRegion.value.columnCount = column - (CSSMaxWidth.value / itemWidthWithSpace.value - offseColumn.value)
+    } else if (column < offsetRegion.value.columnCount) {
+        offsetRegion.value.columnCount = column
+    }
+    if (row > CSSMaxHeight.value / itemHeightWithSpace.value - offsetRow.value) {
+        offsetRegion.value.rowCount = row - (CSSMaxHeight.value / itemHeightWithSpace.value - offsetRow.value)
+    } else if (row < offsetRegion.value.rowCount) {
+        offsetRegion.value.rowCount = row
+    }
+
+    const left = (column - offsetRegion.value.columnCount) * itemWidthWithSpace.value
+    const top = (row - offsetRegion.value.rowCount) * itemHeightWithSpace.value
+
+    wrapper.value.scrollTo(left, top)
+}
+
+defineExpose({
+    scrollTo
+})
 </script>
  
 <template>

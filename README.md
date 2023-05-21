@@ -67,3 +67,9 @@ rowSpace     |  number                      |  row Space
 columnSpace  |  number                      |  column Space
 repeatNumber |  number                      |  item Number of duplicates. For example, 4 rows and 3 columns, the direction is horizontal, and the number of repetitions is 4
 values       |  any[]                       |  an array of values
+
+## Exposes
+
+Name         |  Type                                    |  Description
+-------------|------------------------------------------|-------------------------
+scrollTo     |  (row: number, column: number) => void   |  Scroll to the specified item through rows and columns
