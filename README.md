@@ -60,7 +60,7 @@ for (let i = 0; i < 10000000; i++) {
 
 Name         |  Type                        |  Description 
 -------------|------------------------------|------------
-type         |  'horizontal' \| 'vertical'  |  scroll direction
+type         |  'horizontal' \| 'vertical'  |  The layout direction of the item
 itemWidth    |  number                      |  item Width
 itemHeight   |  number                      |  item Height 
 rowSpace     |  number                      |  row Space
